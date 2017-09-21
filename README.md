@@ -33,3 +33,11 @@
 ### 查看更新日志：
 
 [`update_log.md`](update_log.md)
+
+可能出现的错误提示如下：
+the pyflakes.vim plugin requires Vim to be compiled with +python
+大体上的意思是pyflakes.vim插件需要编译。
+
+解决方法：
+1. 去github重新下载一个pyflakes.vim。执行如下命令git clone --recursive kevinw/pyflakes-vim.git
+2. 进入git克降目录，./pyflakes-vim/ftplugin,通过如下命令将python目录下的所有文件复制到~/.vim/ftplugin目录下即可。cp -R ./python/  ~/.vim/ftplugin/ 复制完成后，再用vim打开python源码文件就不会出现1中的错误了。
